@@ -11,16 +11,11 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v1
-        env:
-          VERSION: ${{ steps.get_version.outputs.VERSION }}
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: sean-clayton/godot-docker/godot:mono-latest
+          repository: sean-clayton/godot-docker/godot
           tag_with_ref: true
