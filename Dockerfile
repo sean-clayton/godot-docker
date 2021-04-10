@@ -1,6 +1,5 @@
 FROM mono:latest
-LABEL author="artur@barichello.me,asheraryam@gmail.com"
-
+LABEL author="sean@seanclayton.me,artur@barichello.me,asheraryam@gmail.com"
 
 USER root
 
